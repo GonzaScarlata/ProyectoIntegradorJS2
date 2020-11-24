@@ -10,6 +10,8 @@ const productBrandModalInput = document.getElementById('productBrandModal');
 const productDescriptionModalInput = document.getElementById('productDescriptionModal');
 const productPriceModalInput = document.getElementById('productPriceModal');
 let editProductId = '';
+const search = document.getElementById('search');
+const searchForm = document.getElementById('searchForm');
 
 const generateId = function () {
     return '_' + Math.random().toString(36).substr(2, 9);
@@ -165,4 +167,15 @@ formEdit.onsubmit = (e) => {
     formEdit.reset();
     displayAllProducts();
     $('#editModal').modal('hide');
+}
+
+searchForm.onsubmit = (e) => {
+    e.preventDefault();
+    const products = JSON.parse(localStorage.getItem('products')) || [];
+    const term = search.value;
+    const filteredProducts = products.filter(p => (p.productName.toLowerCase().includes(term.toLowerCase())
+     || p.productBrand.toLowerCase().includes(term.toLowerCase())
+    ))
+
+    displayProducts(filteredProducts);
 }

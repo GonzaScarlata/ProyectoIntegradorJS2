@@ -4,7 +4,12 @@ const productBrandInput = document.getElementById('productBrand');
 const productDescriptionInput = document.getElementById('productDescription');
 const productPriceInput = document.getElementById('productPrice');
 const productsTable = document.getElementById('productsTable');
-console.log("🚀 ~ file: admin.js ~ line 7 ~ productsTable", productsTable)
+const formEdit = document.getElementById('formEdit');
+const productNameModalInput = document.getElementById('productNameModal');
+const productBrandModalInput = document.getElementById('productBrandModal');
+const productDescriptionModalInput = document.getElementById('productDescriptionModal');
+const productPriceModalInput = document.getElementById('productPriceModal');
+let editProductId = '';
 
 const generateId = function () {
     return '_' + Math.random().toString(36).substr(2, 9);
@@ -109,14 +114,55 @@ function displayAllProducts() {
 displayAllProducts()
 
 function deleteProduct(productId) {
-    // Traer la lista de Tareas de localStorage.
+    // Traer la lista de Productos de localStorage.
     const products = JSON.parse(localStorage.getItem('products')) || [];
-    // Eliminar un tarea, usando filter() para filtrar el tarea
+    // Eliminar un Producto, usando filter() para filtrar el Producto
     // que coincide con el id recibido por parámetros.
     const filteredProducts = products.filter((product) => product.id !== productId);
-    // Guardar lista de tareas en localStorage.
+    // Guardar lista de Productos en localStorage.
     const productsJson = JSON.stringify(filteredProducts);
     localStorage.setItem('products', productsJson);
-    // Actualizar la tabla en el html llamando a la función displayTasks(). 
+    // Actualizar la tabla en el html llamando a la función displayProduct(). 
     displayAllProducts();
+}
+
+const loadForm = (productId) => {
+    const products = JSON.parse(localStorage.getItem('products')) || [];
+    const product = products.find((p) => p.id == productId);
+    productNameModalInput.value = product.productName;
+    productBrandModalInput.value = product.productBrand;
+    productDescriptionModalInput.value = product.productDescription;
+    productPriceModalInput.value = product.productPrice;
+    editProductId = productId;
+}
+
+formEdit.onsubmit = (e) => {
+    e.preventDefault()
+    const products = JSON.parse(localStorage.getItem('products')) || [];
+    const productName = productNameModalInput.value;
+    const productBrand = productBrandModalInput.value;
+    const productDescription = productDescriptionModalInput.value;
+    const productPrice = productPriceModalInput.value;
+    const updatedProducts = products.map((p) => {
+    
+        if (p.id == editProductId) {
+            const product = {
+                ... p,
+                productName,
+                productBrand,
+                productDescription,
+                productPrice,
+                lastUpdate: Date.now(),
+            }
+            return product
+        } else {
+            return p;
+        }
+    })
+    const productsJson = JSON.stringify(updatedProducts);
+    localStorage.setItem('products', productsJson);
+    // Actualizar la tabla en el html llamando a la función displayTasks().
+    formEdit.reset();
+    displayAllProducts();
+    $('#editModal').modal('hide');
 }

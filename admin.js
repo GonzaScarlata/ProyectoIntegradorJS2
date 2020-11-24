@@ -3,6 +3,7 @@ const productNameInput = document.getElementById('productName');
 const productBrandInput = document.getElementById('productBrand');
 const productDescriptionInput = document.getElementById('productDescription');
 const productPriceInput = document.getElementById('productPrice');
+const productImgInput = document.getElementById('productImg');
 const productsTable = document.getElementById('productsTable');
 const formEdit = document.getElementById('formEdit');
 const productNameModalInput = document.getElementById('productNameModal');
@@ -25,12 +26,14 @@ formAddProduct.onsubmit = (event) => {
     const productBrand = productBrandInput.value;
     const productDescription = productDescriptionInput.value;
     const productPrice = productPriceInput.value;
+    const productImg = productImgInput.value;
 
     products.push({
         productName,
         productBrand,        
         productDescription,
-        productPrice,       
+        productPrice,
+        productImg,       
         id: generateId(),
         createdAt: Date.now(),
     })
@@ -54,7 +57,7 @@ const getModal = (product) => {
                               
                 <!-- Modal -->
                 <div class="modal fade" id="modal${product.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">${product.productName}</h5>
@@ -68,6 +71,7 @@ const getModal = (product) => {
                                 <p>Precio del producto: ${product.productPrice}</p>
                                 <p>Producto registrado el día: ${createdAt.toLocaleString()}</p>
                                 <p>Última modificación: ${lastUpdate}</p>
+                                <img src="${product.productImg}" class="card-img-top" alt="Esta es una imágen del producto">
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -91,8 +95,7 @@ function displayProducts(products) {
                             <th scope="row">${index + 1}</th>
                             <td>${product.productName}</td>
                             <td>${product.productBrand}</td>
-                            <td>${product.productPrice}</td>
-                            <td>${product.productDescription}</td>
+                            <td>$${product.productPrice}</td>
                             <td>
                                 ${getModal(product)}
                                 <!-- Button trigger modal -->

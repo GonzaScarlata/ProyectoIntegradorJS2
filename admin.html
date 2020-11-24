@@ -20,7 +20,7 @@
 
     <header class="jumbotron jumbotron-fluid header">
         <div class="container header2">
-            <h1 class="display-1"><strong>CARGA DE PRODUCTOS</strong></h1>
+            <h1 class="display-1"><strong>Carga de Productos</strong></h1>
             <P>Como administrador puedes cargar, modificar y remover productos de la lista para los clientes.</P>
         </div>
     </header>
@@ -76,6 +76,12 @@
                                 </label>
                                 <input type="number" id="productPrice" class="form-control" required>
                             </div>
+                            <div class="form-group">
+                                <label for="productImg">
+                                    Imagen
+                                </label>
+                                <input type="text" id="productImg" placeholder="Si tienes una Imágen para linkear, copia su URL aquí" class="form-control" required>
+                            </div>
                             <button type="submit" class="btn btn-primary">
                                 Agregar
                             </button>
@@ -111,7 +117,6 @@
                         <th scope="col" class="col-md-auto">Producto</th>
                         <th scope="col">Marca</th>
                         <th scope="col">Precio</th>
-                        <th scope="col">Descripción</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
@@ -120,6 +125,10 @@
                 </tbody>
             </table>
         </div>
+    </div>
+
+    <div class="">
+
     </div>
 
     <!-- Modal -->
@@ -185,7 +194,6 @@
         integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
         crossorigin="anonymous"></script>
     <script src="admin.js"></script>
-
 </body>
 
 </html>

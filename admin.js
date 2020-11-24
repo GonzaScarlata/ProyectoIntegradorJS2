@@ -84,14 +84,14 @@ function displayProducts(products) {
                             <th scope="row">${index + 1}</th>
                             <td>${product.productName}</td>
                             <td>${product.productBrand}</td>
-                            <td>${product.productDescription}</td>
                             <td>${product.productPrice}</td>
+                            <td>${product.productDescription}</td>
                             <td>
                                 ${getModal(product)}
                                 <!-- Button trigger modal -->
                                 <!-- Button trigger modal edit -->
                                 <button type="button" class="btn btn-warning text-white" data-toggle="modal" data-target="#editModal" onclick="loadForm('${product.id}')"><i class="far fa-edit"></i></button>
-                                <button onclick="deleteTask('${product.id}')" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                <button onclick="deleteProduct('${product.id}')" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                             </td>
                         </tr>
                     `   ;
@@ -105,4 +105,18 @@ function displayAllProducts() {
     const products = JSON.parse(localStorage.getItem('products')) || [];
 
     displayProducts(products);
+}
+displayAllProducts()
+
+function deleteProduct(productId) {
+    // Traer la lista de Tareas de localStorage.
+    const products = JSON.parse(localStorage.getItem('products')) || [];
+    // Eliminar un tarea, usando filter() para filtrar el tarea
+    // que coincide con el id recibido por parámetros.
+    const filteredProducts = products.filter((product) => product.id !== productId);
+    // Guardar lista de tareas en localStorage.
+    const productsJson = JSON.stringify(filteredProducts);
+    localStorage.setItem('products', productsJson);
+    // Actualizar la tabla en el html llamando a la función displayTasks(). 
+    displayAllProducts();
 }

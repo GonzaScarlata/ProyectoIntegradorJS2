@@ -13,9 +13,9 @@ formLogin.onsubmit = function (e) {
     const userValid = user == person.user && password == person.password 
     if (userValid) {
         alert('Logeo exitoso');
-        window.location.href = './index.html'
+        window.location.href = './admin.html'
     } else {
-        alert('Datos inválido');
+        alert('Datos inválidos');
     }
     
 }

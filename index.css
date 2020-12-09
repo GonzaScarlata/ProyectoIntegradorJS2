@@ -1,7 +1,9 @@
 html{
     scroll-behavior: smooth;
 }
-
+body {
+    position: absolute;
+}
 #navbar {
     color: white;
     background-color: rgb(0, 0, 0);
@@ -44,7 +46,7 @@ html{
 }
 
 #stock {
-    height: 790px;
+    height: auto;
     background-color: white;
     background-size: cover;
 }
@@ -113,6 +115,7 @@ div#imagen:hover p#descripcion {
     font-size: 15px;
     background-color: #5a90bfa8;
     margin-top: auto;
+    position: relative;
 }
 .widget-about img {
     width: 60px;
@@ -149,5 +152,10 @@ footer a:hover {
         max-width: 100%;
     }
 }
-
+.card {
+    word-break: break-word;
+    min-width: 18rem;
+    max-width: 20rem;
+    margin: 10px;
+}
 

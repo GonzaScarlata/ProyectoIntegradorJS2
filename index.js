@@ -19,14 +19,25 @@ function createProduct() {
             </div>
             <div>
                 <div class="card-text text-center">
-                    <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                    <button type="button" id="${product.id}" class="btn btn-primary" onclick="addProductToCart(${product.id})">Agregar al carrito</button>
+                    
                 </div>
             </div>
         </div>
         `;
-
+        console.log("🚀 ~ file: index.js ~ line 23 ~ createProduct ~ product.id", product.id)
     cardsProducts.unshift(card);
   }
   cardShowed.innerHTML = cardsProducts.join("");
 }
 createProduct();
+
+function addProductToCart(Id) {
+    const products = JSON.parse(localStorage.getItem('products')) || [];
+    console.log("🚀 ~ file: index.js ~ line 37 ~ addProductToCart ~ products", products)
+    const product = products.filter((element) => element.id === Id);
+    console.log("🚀 ~ file: index.js ~ line 38 ~ addProductToCart ~ product", product)
+    const productsJson = JSON.stringify(product);
+    localStorage.setItem('cartProducts', productsJson);
+  
+}

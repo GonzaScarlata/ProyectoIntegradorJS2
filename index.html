@@ -45,12 +45,12 @@
     <a href=#stock>
       Stock
     </a>
-    <ul>
+    <ul class="d-flex aling-text-center justify-content-between">
       <!-- Button trigger modal -->
-      <button type="button" class="fas fa-shopping-cart btn-lg btn-light" style="color: rgb(80, 172, 168);"
+      <button type="button" class="fas fa-shopping-cart btn-lg btn-light m-1" style="color: rgb(80, 172, 168);"
         data-bs-toggle="modal" data-bs-target="#cartModal"></button>
-      <button class="btn btn-light">Registrarse</button>
-      <a href="login.html"><button class="btn btn-light">Iniciar Sesión</button></a>
+      <button class="btn btn-light m-1">Registrarse</button>
+      <a href="login.html"><button class="btn btn-light m-1">Iniciar Sesión</button></a>
     </ul>
   </nav>
 
@@ -63,13 +63,24 @@
           <h5 class="modal-title" id="exampleModalLabel">Carrito de compras</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis voluptatum quo earum ab quae tempore et? Modi commodi dolore nihil animi error dolor cumque nesciunt, itaque accusantium ullam odit nemo.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci natus corrupti culpa eligendi deleniti id est ipsam, quae doloremque assumenda ab dolores, facere, eius dignissimos architecto quos fugiat incidunt inventore.
+        <div class="modal-body" id="">
+          <table>
+            <thead class="table-dark">
+              <tr>
+                  <th scope="col" id="sup_izq">#</th>
+                  <th scope="col" class="col-md-auto">Producto</th>
+                  <th scope="col">Precio</th>
+                  <th scope="col" id="sup_der"></th>
+              </tr>  
+            </thead>
+            <tbody id="cartModalContent">
+
+            </tbody>
+          </table>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-primary">Comprar</button>
         </div>
       </div>
     </div>

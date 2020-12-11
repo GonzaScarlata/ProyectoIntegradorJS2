@@ -1,5 +1,6 @@
 const cardShowed = document.getElementById("cardShowed");
 const products = JSON.parse(localStorage.getItem("products")) || [];
+const cartModalContent = document.getElementById("cartModalContent");
 
 function createProduct() {
   //Traer los productos de local storage
@@ -33,16 +34,39 @@ createProduct();
 
 function addProductToCart(Id) {
     const cartProducts = JSON.parse(localStorage.getItem('cartProducts')) || [];
-    console.log("🚀 ~ file: index.js ~ line 36 ~ addProductToCart ~ cartProducts", cartProducts)
-    //console.log("🚀 ~ file: index.js ~ line 36 ~ addProductToCart ~ cartProducts", cartProducts)
     const products = JSON.parse(localStorage.getItem('products')) || [];
     const cartProduct = products.find(element => element.id === Id);
-    //console.log("🚀 ~ file: index.js ~ line 39 ~ addProductToCart ~ cartProduct", cartProduct)
 
     cartProducts.push(cartProduct);
-    console.log("🚀 ~ file: index.js ~ line 42 ~ addProductToCart ~ cartProducts", cartProducts)
-    
     
     const cartProductJson = JSON.stringify(cartProducts);
     localStorage.setItem('cartProducts', cartProductJson);
 }
+
+function showTheCart() {
+    const cartProducts = JSON.parse(localStorage.getItem('cartProducts')) || [];
+    const showedProducts = [];
+
+    for (let i = 0; i < cartProducts.length ; i++) {
+        cartProduct = cartProducts[i];
+        cart = `
+                <tr class = "w-100">
+                    <th scope="row">${i + 1}</th>
+                    <td>${cartProduct.productName}</td>
+                    <td>$${cartProduct.productPrice}</td>
+                </tr>
+        `;
+        showedProducts.push(cart);
+    }
+    cartModalContent.innerHTML = showedProducts.join('');
+}
+showTheCart();
+/*
+                    <td>
+                        ${getModal(cartProduct)}
+                        <!-- Button trigger modal -->
+                        <!-- Button trigger modal edit -->
+                        <button type="button" class="btn btn-warning text-white" data-toggle="modal" data-target="#editModal" onclick="loadForm('${product.id}')"><i class="far fa-edit"></i></button>
+                        <button onclick="deleteProduct('${cartProduct.id}')" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                    </td>
+                    */

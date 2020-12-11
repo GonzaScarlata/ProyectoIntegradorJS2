@@ -8,6 +8,15 @@ body {
     color: white;
     background-color: rgb(0, 0, 0);
 }
+/* table */
+#sup_izq {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+#sup_der {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
 
 #section1 {
     height: 200px;
@@ -43,6 +52,11 @@ body {
     height: 790px;
     background-image: url(./img/mac.PNG);
     background-size: cover;
+}
+
+ul {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 #stock {

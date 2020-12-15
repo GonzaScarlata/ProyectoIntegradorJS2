@@ -1,4 +1,4 @@
-const cardShowed = document.getElementById("cardShowed");
+const iPhone = document.getElementById("iPhone");
 const products = JSON.parse(localStorage.getItem("products")) || [];
 const cartModalContent = document.getElementById("cartModalContent");
 const price = document.getElementById("price");
@@ -70,7 +70,7 @@ function createProduct() {
         `;
     cardsProducts.unshift(card);
   }
-  cardShowed.innerHTML = cardsProducts.join("");
+  iPhone.innerHTML = cardsProducts.join("");
 }
 createProduct();
 

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
         integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
         crossorigin="anonymous" />
+        <link rel="stylesheet" href="index.html">
     <title>Alta de productos</title>
 
 
@@ -27,9 +28,13 @@
 
     <div class="container">
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addProductModal">
+        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addProductModal">
             Agregar producto
         </button>
+
+        <a href="index.html"><button type="button" class="btn btn-info" data-toggle="modal" data-target="#addProductModal">
+            Ver productos en Stock
+        </button></a>
 
         <!-- Modal -->
         <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -56,11 +61,12 @@
                                 </label>
                                 <select class="form-control" id="productBrand" required>
                                     <option value="" disabled selected>Marcas</option>
-                                    <option>Apple</option>
-                                    <option>Samsung</option>
-                                    <option>Asus</option>
-                                    <option>Lenovo</option>
-                                    <option>Otra</option>
+                                    <option>iPhone</option>
+                                    <option>MacBook</option>
+                                    <option>iPad</option>
+                                    <option>Watch</option>
+                                    <option>AirPods</option>
+                                    <option>Otro</option>
                                 </select>
                             </div>
                             <div class="form-group">
@@ -82,12 +88,6 @@
                                 </label>
                                 <input type="text" id="productImg" placeholder="linkea una Imágen, copia su URL aquí" class="form-control" required>
                             </div>
-                            <div class="form-group">
-                                <label for="productImg">
-                                    <input type="checkbox" id="checkBox" class="">
-                                    Envío gratis
-                                </label>
-                                
                             </div>
                             <button type="submit" class="btn btn-primary">
                                 Agregar
@@ -161,11 +161,12 @@
                         </label>
                         <select class="form-control" id="productBrandModal" required>
                             <option value="" disabled selected>Marcas</option>
-                            <option>Apple</option>
-                            <option>Samsung</option>
-                            <option>Asus</option>
-                            <option>Lenovo</option>
-                            <option>Otra</option>
+                            <option>iPhone</option>
+                            <option>MacBook</option>
+                            <option>iPad</option>
+                            <option>Watch</option>
+                            <option>AirPods</option>
+                            <option>Otro</option>
                         </select>
                     </div>
                     <div class="form-group">
@@ -177,9 +178,15 @@
                     </div>
                     <div class="form-group">
                         <label for="productPriceModal">
-                            precio
+                            Precio
                         </label>
                         <input type="number" id="productPriceModal" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productImg">
+                            Imagen
+                        </label>
+                        <input type="text" id="productImg" placeholder="linkea una Imágen, copia su URL aquí" class="form-control">
                     </div>
                     <button type="submit" class="btn btn-primary">
                         Modificar

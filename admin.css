@@ -1,0 +1,14 @@
+@media (min-width: 786px) {
+    .hiddenButtons {
+        display: none;
+    }
+}
+
+@media (max-width: 785px) {
+     .tableButtons {
+        display: none;
+    }
+    .searchButton {
+        font-size: 75%;
+    }
+}

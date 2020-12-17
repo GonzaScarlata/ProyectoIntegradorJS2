@@ -20,46 +20,35 @@
 
 <body>
 
-  <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark ">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse w-100" id="navbarTogglerDemo01">
-      <div class="d-flex align-items-center w-100 justify-content-around ml-3 md-3 p-3">
-      <a class="navbar-brand" href="#">
-        <img src="./img/icon3.png" width="100" height="100" class="d-inline-block" alt="" loading="lazy">
-        iTake it!
-      </a>
-      <a href=#nosotros>
-        <i class="fas fa-users"></i>
-        Nosotros
-      </a>
-      <a href=#envios>
-        <i class="far fa-paper-plane"></i>
-        Envíos
-      </a>
-      <a href=#rofli>
-        <i class="fas fa-plane-departure"></i>
-        Rolling Flights
-      </a>
-      <a href=#stock>
-        <i class="fas fa-cash-register"></i>
-        Stock
-      </a>
-      <ul class="d-flex aling-text-center justify-content-between">
-        <!-- Button trigger modal -->
-        <!-- <button type="button"  
-           data-bs-toggle="modal" data-bs-target="#cartModal"></button> -->
-        <button type="button" style="color: rgb(80, 172, 168);" class="fas fa-shopping-cart btn-lg btn-light m-1"
-          onclick="totalPrice()" data-toggle="modal" data-target="#cartModal"></button>
-        <a href="login.html" target="_blank"><button class="btn btn-light m-1">Iniciar Sesión</button></a>
-      </ul>
-    </div>
-    </div>
-  </nav>
-
-  <nav id="navbar" class="">
-    
+  <nav id="navbar" class="navbar navbar-light d-flex align-items-flex-end ml-auto mr-auto p-3">
+    <a class="navbar-brand" href="#">
+      <img src="./img/icon3.png" width="100" height="100" class="d-inline-block" alt="" loading="lazy">
+      iTake it!
+    </a>
+    <a href=#nosotros>
+      <i class="fas fa-users"></i>
+      Nosotros
+    </a>
+    <a href=#envios>
+      <i class="far fa-paper-plane"></i>
+      Envíos
+    </a>
+    <a href=#rofli>
+      <i class="fas fa-plane-departure"></i>
+      Rolling Flights
+    </a>
+    <a href=#stock>
+      <i class="fas fa-cash-register"></i>
+      Stock
+    </a>
+    <ul class="d-flex aling-text-center justify-content-between">
+      <!-- Button trigger modal -->
+      <!-- <button type="button"  
+         data-bs-toggle="modal" data-bs-target="#cartModal"></button> -->
+      <button type="button" style="color: rgb(80, 172, 168);" class="fas fa-shopping-cart btn-lg btn-light m-1"
+        onclick="totalPrice()" data-toggle="modal" data-target="#cartModal"></button>
+      <a href="login.html" target="_blank"><button class="btn btn-light m-1">Iniciar Sesión</button></a>
+    </ul>
   </nav>
 
 
@@ -204,7 +193,7 @@
 
 
   <section id="nosotros">
-    <div id="divnos" class="col-6 m-auto">
+    <div id="divnos" class="col-9 col-sm-6 m-auto">
     <img id="imgnos" src="./img/icon3.PNG" alt="">
     <div class="d-flex flex-wrap">
         <h1 id="textnos">Nosotros</h1>
@@ -216,9 +205,24 @@
   </section>
 
 
+  <section id="rofli">
+    <div id="divnos" class="col-9 col-sm-6 m-auto">
+      <div class="d-flex flex-wrap">
+          <h1 id="textnos">Convenio con Rolling Flights</h1>
+            <p id="textnos">Como empresa buscamos dar la mejor experiencia a nuestros clientes, por eso, contamos con el trabajo de la compaía aérea Rolling Flights.
+            <br> Rolling Flights, con mas de 10 años volando por los aires, llegó a nosotros para implementar nuestros envíos, nos garantiza día a día la seguridad de nuestros paquetes,y nos brinda a nosotros la misma confianza que nosotros brindamos a nuestros clientes, y por eso nos eligen.
+            </p>
+      </div>
+      <div class="d-flex flex-wrap justify-content-center">
+        <img id="imgnos" src="./img/icon3.PNG" alt="">
+        <img id="imgnos2" src="./img/iconrolling.PNG" alt="">
+      </div>
+    </div>
+  </section>
+
 
   <section id="envios">
-    <section id="Precios" class ="card ml-5 mr-5 pb-5 pt-5 mx-auto shadow">
+    <div id="Precios" class="card mx-auto mb-5 cardEnvioss shadow">
       <form id="formulario">
           <h2>Calcule su costo estimado de envío</h2>
   
@@ -252,25 +256,13 @@
                   <select id="inputState" class="form-control px-1">
                       <option selected>1</option>
                       <option>2</option>
-                      <option>3</option>
-                      <option>4</option>
                   </select>
-              </div>
-              <!--Adultos, niños; Ida y vuelta, solo ida-->
-              <div class="form-check form-check-inline w-33 px-1">
-                  <input class="form-check-input px-2 py-2" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                      value="option1">
-                  <label class="form-check-label  pr-1 py-2" for="inlineRadio1">Ida y vuelta</label>
-                  <input class="form-check-input px-2 py-2" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                      value="option2">
-                  <label class="form-check-label  pr-1 py-2" for="inlineRadio2">Sólo ida</label>
               </div>
               <button type="submit" class="btn btn-outline-dark w-33 px-5">Buscar</button>
           </div>
       </form>
+    </div>
   </section>
-  </section>
-
 
 
   <section id="rofli">
@@ -342,6 +334,8 @@
       <div class="card-deck d-flex justify-content-center flex-wrap" id="Otros">
 
       </div>
+
+      <button class="btn btn-info m-1" onclick="totalPrice()" data-toggle="modal" data-target="#cartModal">Ver carrito</button>
     </div>
   </section>
 

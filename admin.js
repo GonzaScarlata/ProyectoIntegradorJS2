@@ -24,7 +24,6 @@ formAddProduct.onsubmit = (event) => {
     event.preventDefault();
     const productName = productNameInput.value;
     const productBrand = productBrandInput.value;
-    console.log("🚀 ~ file: admin.js ~ line 27 ~ productBrand", productBrand)
     const productDescription = productDescriptionInput.value;
     const productPrice = productPriceInput.value;
     const productImg = productImgInput.value;

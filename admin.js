@@ -96,7 +96,6 @@ function displayProducts(products) {
                             <td>${product.productName}</td>
                             <td>${product.productBrand}</td>
                             <td>${product.productPrice}</td>
-                            <td>${product.productPrice}</td>
                             <td>
                                 <div class="hiddenButtons">
                                     <div class="dropdown">

@@ -62,13 +62,10 @@ a:hover {
     height: 200px;
 }
 
-h1{
+#textnos{
     text-shadow: 2px 2px 2px black;
 }
 
-p {
-    text-shadow: 2px 2px 2px black;
-  }
 
 /*Formulario*/
 #formulario{

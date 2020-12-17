@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="w-100"> 
+<html lang="en" class="fluid"> 
 
 <head>
     <!-- Required meta tags -->
@@ -16,10 +16,30 @@
 
 <body>
 
-    <header class="jumbotron jumbotron-fluid header">
+    <nav id="navbar" class="navbar navbar-light d-flex align-items-flex-end ml-auto mr-auto p-3">
+        <a class="navbar-brand" href="#">
+          <img src="./img/icon3.png" width="100" height="100" class="d-inline-block" alt="" loading="lazy">
+          iTake it!
+        </a>
+        <a href=#nosotros>
+          
+        </a>
+        <a href=#nosotros>
+          
+        </a>
+        <a href=#nosotros>
+          
+        </a>
+        
+        <ul class="d-flex aling-text-center justify-content-between">
+          <a href="index.html" target="_blank"><button class="btn btn-light m-1">Página Principal <i class="fab fa-apple"></i></button></a>
+        </ul>
+      </nav>
+
+    <header class="jumbotron jumbotron-fluid header text-break">
         <div class="container header2">
             <h1 class="display-1"><strong>Carga de Productos</strong></h1>
-            <P>Como administrador puedes cargar, modificar y remover productos de la lista para los clientes.</P>
+            <P class="headerP">Como administrador puedes cargar, modificar y remover productos de la lista para los clientes.</P>
         </div>
     </header>
 
@@ -102,7 +122,7 @@
                 <button type="submit" class="btn btn-outline-info searchButton m-2">
                     <i class="fab fa-searchengin "></i>
                 </button>
-                <button type="button" class="btn btn-outline-warning searchButton" onclick="displayAllProducts()">
+                <button type="button" class="btn btn-outline-warning searchButton text-truncate" onclick="displayAllProducts()">
                     Lista completa
                 </button>
             </form>

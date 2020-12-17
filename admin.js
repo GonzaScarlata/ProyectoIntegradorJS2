@@ -24,6 +24,7 @@ formAddProduct.onsubmit = (event) => {
     event.preventDefault();
     const productName = productNameInput.value;
     const productBrand = productBrandInput.value;
+    console.log("🚀 ~ file: admin.js ~ line 27 ~ productBrand", productBrand)
     const productDescription = productDescriptionInput.value;
     const productPrice = productPriceInput.value;
     const productImg = productImgInput.value;
@@ -57,7 +58,7 @@ const getModal = (product) => {
                               
                 <!-- Modal -->
                 <div class="modal fade" id="modal${product.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-fullscreen-md-down">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">${product.productName}</h5>

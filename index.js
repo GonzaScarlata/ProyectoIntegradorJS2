@@ -97,7 +97,7 @@ function totalPrice() {
     for (i = 0; i < cartProducts.length; i ++) {
         const cartProduct = cartProducts[i];
         counter = counter + parseInt(cartProduct.productPrice);
-        total = `<th scope="row">=></th>
+        total = `<th scope="row"><i class="fas fa-angle-double-right"></i></th>
         <td>El precio total de la compra es: $${counter}</td>
         `;
     }}

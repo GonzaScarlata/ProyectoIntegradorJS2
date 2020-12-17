@@ -13,13 +13,14 @@
 
   <body>
 
-    <div class="jumbotron jumbotron-fluid header">
-        <h2>Login</h2>
+    <div class="jumbotron jumbotron-fluid header text-break text-center">
+        <h1>Login</h1>
+        <h4>Hola administrador, por favor ingresa tu usuario y tu contraseña para cargar productos.</h4>
     </div>
 
     
-    <div class="container">
-        <form class="m-5 mx-auto card p-5 w-50" id="formLogin">
+    <div class="container-md text-break ">
+        <form class=" m-5 mx-auto card p-5 w-75" id="formLogin">
             <div class="form-group">
                 <label for="user">
                     Usuario
@@ -32,9 +33,11 @@
                 </label>
                 <input type="text" id="password" class="form-control" placeholder="Ingrese la contraseña" required>
             </div>
-            <button type="submit" class="btn btn-info mt-4">
-                Ingresar
-            </button>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-info mt-4 m-auto">
+                    Ingresar
+                 </button>
+            </div>
         </form>
 
     </div>

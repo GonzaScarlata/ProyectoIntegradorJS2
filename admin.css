@@ -11,4 +11,11 @@
     .searchButton {
         font-size: 75%;
     }
+    h1 {
+        font-size: 300% !important;
+    }
+    
+}
+.headerP {
+    font-size: 150%;
 }

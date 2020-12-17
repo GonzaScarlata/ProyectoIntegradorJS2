@@ -97,7 +97,7 @@ function totalPrice() {
     for (i = 0; i < cartProducts.length; i ++) {
         const cartProduct = cartProducts[i];
         counter = counter + parseInt(cartProduct.productPrice);
-        total = `<th scope="row">=></th>
+        total = `<th scope="row"><i class="fas fa-angle-double-right"></i></th>
         <td>El precio total de la compra es: $${counter}</td>
         `;
     }}
@@ -122,15 +122,17 @@ function showTheCart() {
     const showedProducts = [];
 
     for (let i = 0; i < cartProducts.length ; i++) {
-        cartProduct = cartProducts[i];
-        cart = `
+        const cartProduct = cartProducts[i];
+        const cart = `
                 <tr class = "w-100">
                     <th scope="row">${i + 1}</th>
                     <td>${cartProduct.productName}</td>
                     <td>$${cartProduct.productPrice}</td>
                     <td class="d-flex justify-content-end">
-                        ${getModal(cartProduct)}
-                        <!-- Button trigger modal -->
+                    <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal${cartProduct.id}">
+                            Mostrar
+                        </button>
                         <!-- Button trigger modal edit -->
                         <button onclick="deleteProduct('${cartProduct.id}')" class="btn btn-danger ml-1"><i class="fas fa-trash-alt"></i></button>
                     </td>

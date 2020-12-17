@@ -53,10 +53,22 @@ a:hover {
 }
 
 #imgnos {
+    width: 300px;
+    height: 300px;
+}
+
+#imgnos2 {
     width: 200px;
     height: 200px;
 }
 
+h1{
+    text-shadow: 2px 2px 2px black;
+}
+
+p {
+    text-shadow: 2px 2px 2px black;
+  }
 
 /*Formulario*/
 #formulario{
@@ -72,6 +84,7 @@ a:hover {
 }
 
 #rofli {
+    color: white;
     display: flex;
     align-items: center;
     height: 790px;

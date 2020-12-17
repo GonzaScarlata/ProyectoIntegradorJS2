@@ -62,9 +62,9 @@ function createProduct() {
     const product = products[i];
     const brand = product.productBrand;
     const card = `
-        <div class="card text-center mb-2 p-2 d-flex align-content-between flex-wrap" style="width: 18rem;">
+        <div class="card text-center mb-2 p-2 d-flex align-content-between flex-wrap justify-content-center" style="width: 18rem;">
             <div class="text-center">
-                <img src="${product.productImg}" class="card-img-top" style="width: 18rem; height: 190px;" alt="imágen del producto">
+                <img src="${product.productImg}" class="card-img-top m-auto" style="width: 18rem; height: 190px;" alt="imágen del producto">
             </div>
             <div class="card-body ">
                 <h5 class="card-title">${product.productName}</h5>
@@ -132,8 +132,8 @@ function totalPrice() {
     } else {
     for (i = 0; i < cartProducts.length; i ++) {
         const cartProduct = cartProducts[i];
-        counter = counter + parseInt(cartProduct.productPrice);
-        total = `<th scope="row">=></th>
+        counter = counter + parseFloat(cartProduct.productPrice);
+        total = `<th scope="row"><i class="fas fa-angle-double-right"></i></th>
         <td>El precio total de la compra es: $${counter}</td>
         `;
     }}
@@ -160,15 +160,17 @@ function showTheCart() {
     const showedProducts = [];
 
     for (let i = 0; i < cartProducts.length ; i++) {
-        cartProduct = cartProducts[i];
-        cart = `
+        const cartProduct = cartProducts[i];
+        const cart = `
                 <tr class = "w-100">
                     <th scope="row">${i + 1}</th>
                     <td>${cartProduct.productName}</td>
                     <td>$${cartProduct.productPrice}</td>
                     <td class="d-flex justify-content-end">
-                        ${getModal(cartProduct)}
-                        <!-- Button trigger modal -->
+                    <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal${cartProduct.id}">
+                            Mostrar
+                        </button>
                         <!-- Button trigger modal edit -->
                         <button onclick="deleteProduct('${cartProduct.id}')" class="btn btn-danger ml-1"><i class="fas fa-trash-alt"></i></button>
                     </td>

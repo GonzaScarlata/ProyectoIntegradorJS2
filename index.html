@@ -9,8 +9,6 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/cf7dc1dea7.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="index.css">
   <link rel="stylesheet" href="login.html">
@@ -45,9 +43,11 @@
     </a>
     <ul class="d-flex aling-text-center justify-content-between">
       <!-- Button trigger modal -->
-      <button type="button" onclick="totalPrice()" class="fas fa-shopping-cart btn-lg btn-light m-1"
-        style="color: rgb(80, 172, 168);" data-bs-toggle="modal" data-bs-target="#cartModal"></button>
-      <a href="login.html"><button class="btn btn-light m-1" style="color: rgb(80, 172, 168);">Iniciar Sesión</button></a>
+      <!-- <button type="button"  
+         data-bs-toggle="modal" data-bs-target="#cartModal"></button> -->
+      <button type="button" style="color: rgb(80, 172, 168);" class="fas fa-shopping-cart btn-lg btn-light m-1"
+        onclick="totalPrice()" data-toggle="modal" data-target="#cartModal"></button>
+      <a href="login.html" target="_blank"><button class="btn btn-light m-1">Iniciar Sesión</button></a>
     </ul>
   </nav>
 
@@ -58,10 +58,12 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Carrito de compras</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
         </div>
-        <div class="modal-body" id="">
-          <table class="w-100">
+        <div class="modal-body">
+          <table class="w-100 table-striped">
             <thead class="table-dark">
               <tr>
                 <th scope="col" id="sup_izq">#</th>
@@ -77,8 +79,8 @@
           <p id="price"></p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
           <button type="button" class="btn btn-primary">Comprar</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
         </div>
       </div>
     </div>
@@ -101,6 +103,7 @@
         <img src="./img/img3.JPEG" class="d-block w-100" alt="...">
       </div>
     </div>
+    
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="sr-only">Previous</span>
@@ -117,15 +120,15 @@
       <div id="info">
         <p id="headline">iPhone</p>
         <p id="descripcion">
-          <a href="#stock">·iPhone X/XR/XS</a>
+          <a href="#iPhonee">·iPhone X/XR/XS</a>
           <br>
-          <a href="#stock">·iPhone XS MAX</a>
+          <a href="#iPhonee">·iPhone XS MAX</a>
           <br>
-          <a href="#stock">·iPhone 11</a>
+          <a href="#iPhonee">·iPhone 11</a>
           <br>
-          <a href="#stock">·iPhone 12</a>
+          <a href="#iPhonee">·iPhone 12</a>
           <br>
-          <a href="#stock">Ver stock</a>
+          <a href="#iPhonee">Ver stock</a>
         </p>
       </div>
     </div>
@@ -134,11 +137,11 @@
       <div id="info">
         <p id="headline">MacBook</p>
         <p id="descripcion">
-          <a href="#stock">·MacBook Air</a>
+          <a href="#MacBookk">·MacBook Air</a>
           <br>
-          <a href="#stock">·MacBook Pro</a>
+          <a href="#MacBookk">·MacBook Pro</a>
           <br>
-          <a href="#stock">Ver stock</a>
+          <a href="#MacBookk">Ver stock</a>
         </p>
       </div>
     </div>
@@ -146,7 +149,12 @@
     <div class="imagen" id="img3">
       <div id="info">
         <p id="headline">iPad</p>
-        <p id="descripcion"> ·iPad Mini <br> ·iPad Air <br> ·iPad Pro <br>
+        <p id="descripcion"> ·iPad Mini
+          <br>
+          <a href="#stock">·iPad Air</a>
+          <br>
+          <a href="#stock">·iPad Pro</a>
+          <br>
           <a href="#stock">Ver stock</a>
         </p>
       </div>
@@ -155,7 +163,14 @@
     <div class="imagen" id="img4">
       <div id="info">
         <p id="headline">Watch</p>
-        <p id="descripcion"> ·Watch Series 5 <br> ·Watch Series 6 <br> ·Watch Series 7 <br> ·Watch Nike <br>
+        <p id="descripcion"> ·Watch Series 5
+          <br>
+          <a href="#stock">·Watch Series 6</a>
+          <br>
+          <a href="#stock">·Watch Series 7</a>
+          <br>
+          <a href="#stock">·Watch Nike</a>
+          <br>
           <a href="#stock">Ver stock</a>
         </p>
       </div>
@@ -164,7 +179,10 @@
     <div class="imagen" id="img5">
       <div id="info">
         <p id="headline">AirPods</p>
-        <p id="descripcion"> ·AirPods 1 y 2 <br> ·AirPods Pro. <br>
+        <p id="descripcion">·AirPods 1 y 2
+          <br>
+          <a href="#stock">·AirPods Pro.</a>
+          <br>
           <a href="#stock">Ver stock</a>
         </p>
       </div>
@@ -179,7 +197,7 @@
     <img id="imgnos" src="./img/icon3.PNG" alt="">
     <div class="d-flex flex-wrap">
         <h1 id="textnos">Nosotros</h1>
-          <p id="textnos">Somos una empresa dedicada a transportar productos de la marca Apple directamente desde Estados Unidos, tenemos mas de 10 años trabajando, con clientes en mas de 5 provincias de Argentina.
+          <p id="textnos">Somos una empresa dedicada a transportar productos de la marca Apple directamente desde Estados Unidos, tenemos mas de 8 años trabajando, con clientes en mas de 5 provincias de Argentina.
           <br> Nuestra trayectoria y experiencia trabajando, convence a nuestros clientes a seguir confiando en nosotros. Contamos con locales propios en Buenos Aires, Córdoba, Mendoza y Tucumán. Ademas, tenemos convenios con mas de 20 marcas y locales distribuídos por Argentina. 
           </p>
     </div>
@@ -189,7 +207,7 @@
 
 
   <section id="envios">
-    <section id="Precios">
+    <section id="Precios" class ="card ml-5 mr-5 pb-5 pt-5 mx-auto shadow">
       <form id="formulario">
           <h2>Calcule su costo estimado de envío</h2>
   
@@ -245,15 +263,18 @@
 
 
   <section id="rofli">
+    <div id="divnos" class="col-6 m-auto">
+      <div class="d-flex flex-wrap justify-content-center">
       <img id="imgnos" src="./img/icon3.PNG" alt="">
-      <img id="imgnos" src="./img/iconrolling.PNG" alt="">
-      <div id="divnos" class="col-6"></div>
+      <img id="imgnos2" src="./img/iconrolling.PNG" alt="">
+    </div>
       <div class="d-flex flex-wrap">
-          <h1 id="textnos">Nosotros</h1>
-            <p id="textnos">Somos una empresa dedicada a transportar productos de la marca Apple directamente desde Estados Unidos, tenemos mas de 10 años trabajando, con clientes en mas de 15 provincias de Argentina.
-            <br> Nuestra trayectoria y experiencia trabajando, convence a nuestros clientes a seguir confiando en nosotros. Contamos con locales propios en Buenos Aires, Córdoba, Mendoza y Tucumán. Ademas, tenemos convenios con mas de 20 marcas y locales distribuídos por Argentina. 
+          <h1 id="textnos">Convenio con Rolling Flights</h1>
+            <p id="textnos">Como empresa buscamos dar la mejor experiencia a nuestros clientes, por eso, contamos con el trabajo de la compaía aérea Rolling Flights.
+            <br> Rolling Flights, con mas de 10 años volando por los aires, llegó a nosotros para implementar nuestros envíos, nos garantiza día a día la seguridad de nuestros paquetes,y nos brinda a nosotros la misma confianza que nosotros brindamos a nuestros clientes, y por eso nos eligen.
             </p>
       </div>
+    </div>
   </section>
 
 
@@ -270,7 +291,7 @@
 
   <section class="container">
     <div class="container">
-      <h5>MacBook</h5>
+      <h5 id="MacBookk">MacBook</h5>
       <div class="card-deck d-flex justify-content-center flex-wrap" id="MacBook">
 
       </div>
@@ -306,7 +327,7 @@
 
   <section class="container">
     <div class="container">
-      <h5>Otro</h5>
+      <h5>Otros</h5>
       <div class="card-deck d-flex justify-content-center flex-wrap" id="Otros">
 
       </div>
@@ -330,7 +351,7 @@
       <div class="widget-about w-auto">
         <img src="img/icon3.png"></img>
       </div>
-      <!-- Footer direction -->
+      <!-- Footer dirección -->
       <div class="container-fluid col-sm-3 text-center mb-0">
         <address>
           &#169 iTake It! All Rights Reserved.
@@ -373,12 +394,7 @@
     integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
     crossorigin="anonymous"></script>
   <script src="./index.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
-    integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
-    integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj"
-    crossorigin="anonymous"></script>
+
 </body>
 
 </html>

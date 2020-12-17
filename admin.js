@@ -24,6 +24,7 @@ formAddProduct.onsubmit = (event) => {
     event.preventDefault();
     const productName = productNameInput.value;
     const productBrand = productBrandInput.value;
+    console.log("🚀 ~ file: admin.js ~ line 27 ~ productBrand", productBrand)
     const productDescription = productDescriptionInput.value;
     const productPrice = productPriceInput.value;
     const productImg = productImgInput.value;
@@ -51,13 +52,13 @@ const getModal = (product) => {
     }
 
     return `    <!-- Button trigger modal -->
-                <button type="button" class="btn btn-info" data-toggle="modal" data-target="#modal${product.id}">
+                <button type="button" class="btn btn-info tableButtons" data-toggle="modal" data-target="#modal${product.id}">
                     Mostrar
                 </button>
                               
                 <!-- Modal -->
                 <div class="modal fade" id="modal${product.id}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-fullscreen-md-down">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">${product.productName}</h5>
@@ -98,11 +99,27 @@ function displayProducts(products) {
                             <td>${product.productPrice}</td>
                             <td>${product.productPrice}</td>
                             <td>
-                                ${getModal(product)}
-                                <!-- Button trigger modal -->
-                                <!-- Button trigger modal edit -->
-                                <button type="button" class="btn btn-warning text-white" data-toggle="modal" data-target="#editModal" onclick="loadForm('${product.id}')"><i class="far fa-edit"></i></button>
-                                <button onclick="deleteProduct('${product.id}')" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+                                <div class="hiddenButtons">
+                                    <div class="dropdown">
+                                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Opciones
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                                            <button type="button" class="dropdown-item btn btn-info" data-toggle="modal" data-target="#modal${product.id}">
+                                                Mostrar
+                                            </button>
+                                            <button type="button" class="dropdown-item btn btn-info" data-toggle="modal" data-target="#editModal" onclick="loadForm('${product.id}')"><i class="far fa-edit"></i></button>
+                                            <button onclick="deleteProduct('${product.id}')" class="dropdown-item btn btn-info"><i class="fas fa-trash-alt"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="">
+                                    <!-- Button trigger modal -->
+                                    ${getModal(product)}
+                                    <!-- Button trigger modal edit -->
+                                    <button type="button" class="btn btn-warning text-white tableButtons" data-toggle="modal" data-target="#editModal" onclick="loadForm('${product.id}')"><i class="far fa-edit"></i></button>
+                                    <button onclick="deleteProduct('${product.id}')" class="btn btn-danger tableButtons"><i class="fas fa-trash-alt"></i></button>
+                                </div>
                             </td>
                         </tr>
                     `   ;

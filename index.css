@@ -42,9 +42,11 @@ a:hover {
     display: flex;
     align-items: center;
     height: 790px;
-    background-image: url(./img/fondonos.jpg);
+    background-image: url(./img/fondonos.JPEG);
     background-size: cover;
     color: white;
+    text-shadow: 2px 2px 2px black;
+    text-align: justify;
 }
 
 #divnos{
@@ -62,33 +64,41 @@ a:hover {
     height: 200px;
 }
 
-h1{
-    text-shadow: 2px 2px 2px black;
+
+.cardEnvioss{
+    max-width: auto !important;
 }
 
-p {
-    text-shadow: 2px 2px 2px black;
-  }
 
 /*Formulario*/
 #formulario{
-    max-width: 60vw;
-    margin: auto;
+    width: max-content;
+    height: max-content;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-left: 90px;
+    padding-right: 90px;
 }
+
+
+
+
 #envios {
     display: flex;
     align-items: center;
     height: 790px;
-    background-image: url(./img/fondoenvios.jpeg);
+    background-image: url(./img/fondoenvios.JPEG);
     background-size: cover;
 }
 
 #rofli {
     color: white;
+    text-shadow: 2px 2px 2px black;
+    text-align: justify;
     display: flex;
     align-items: center;
     height: 790px;
-    background-image: url(./img/rollingflights.jpeg);
+    background-image: url(./img/rollingflights.JPEG);
     background-size: cover;
 }
 
@@ -226,10 +236,10 @@ footer a:hover {
         max-width: 100%;
     }
 }
-.card {
-    word-break: break-word;
-    min-width: 18rem;
-    max-width: 19.1rem;
-    margin: 10px;
+.cardStock {
+    word-break: break-word !important;
+    min-width: 18rem !important;
+    max-width: 19.1rem !important;
+    margin: 10px !important;
 }
 

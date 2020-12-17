@@ -62,7 +62,7 @@ function createProduct() {
     const product = products[i];
     const brand = product.productBrand;
     const card = `
-        <div class="card text-center mb-2 p-2 d-flex align-content-between flex-wrap justify-content-center" style="width: 18rem;">
+        <div class="card cardStock text-center mb-2 p-2 d-flex align-content-between flex-wrap justify-content-center" style="width: 18rem;">
             <div class="text-center">
                 <img src="${product.productImg}" class="card-img-top m-auto" style="width: 18rem; height: 190px;" alt="imágen del producto">
             </div>

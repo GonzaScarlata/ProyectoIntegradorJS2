@@ -67,7 +67,7 @@ const getModal = (product) => {
                             </div>
                             <div class="modal-body">
                                 <div><p>Descripción: ${product.productDescription}</p></div>
-                                <div><p>Marca: ${product.productBrand}</p></div>
+                                <div><p>Categoría: ${product.productBrand}</p></div>
                                 <p>Precio del producto: ${product.productPrice}</p>
                                 <p>Producto registrado el día: ${createdAt.toLocaleString()}</p>
                                 <p>Última modificación: ${lastUpdate}</p>

@@ -1,5 +1,6 @@
 html{
     scroll-behavior: smooth;
+    font-family: sans-serif;
 }
 body {
     position: absolute;
@@ -7,7 +8,20 @@ body {
 #navbar {
     color: white;
     background-color: rgb(0, 0, 0);
+    font-size: 20px;
 }
+
+
+a {
+    outline: none;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+a:hover {
+    color: teal;
+}
+
 /* table */
 #sup_izq {
     border-top-left-radius: 5px;
@@ -25,32 +39,43 @@ body {
 }
 
 #nosotros {
+    display: flex;
+    align-items: center;
     height: 790px;
     background-image: url(./img/fondonos.jpg);
     background-size: cover;
+    color: white;
 }
 
+#divnos{
+    display: flex;
+    align-items: center;
+}
+
+#imgnos {
+    width: 200px;
+    height: 200px;
+}
+
+
+/*Formulario*/
+#formulario{
+    max-width: 60vw;
+    margin: auto;
+}
 #envios {
+    display: flex;
+    align-items: center;
     height: 790px;
     background-image: url(./img/fondoenvios.jpeg);
     background-size: cover;
 }
 
 #rofli {
+    display: flex;
+    align-items: center;
     height: 790px;
     background-image: url(./img/rollingflights.jpeg);
-    background-size: cover;
-}
-
-#apple {
-    height: 790px;
-    background-image: url(./img/ipad.PNG);
-    background-size: cover;
-}
-
-#adobe {
-    height: 790px;
-    background-image: url(./img/mac.PNG);
     background-size: cover;
 }
 
@@ -147,8 +172,9 @@ p#descripcion {
 
 /* Footer */
 .footer {
+    color: white;
     font-size: 15px;
-    background-color: #5a90bfa8;
+    background-color: #000000;
     margin-top: auto;
     position: relative;
 }
@@ -160,26 +186,26 @@ address {
 }
 footer .social-icon {
     font-size: 32px;
-    color: rgba(30, 30, 65, 0.692);
+    color: rgb(255, 255, 255);
     margin: 15px;
 }
 footer i:hover {
-    color: rgba(16, 16, 138, 0.877);
+    color: rgb(255, 255, 255);
 }
 footer a:hover {
-    color: rgba(16, 16, 138, 0.877);
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 .social .social-icon {
     font-size: 35px;
-    color: rgba(30, 30, 65, 0.692);
+    color: rgb(255, 255, 255);
     margin: 5px;
 }
 .nav a {
     font-size: 15px;
     font-weight: bold;
     text-decoration: none;
-    color: rgba(30, 30, 65, 0.692);
+    color: rgb(255, 255, 255);
 }
 @media (min-width:360px) {
     .row {
@@ -190,7 +216,7 @@ footer a:hover {
 .card {
     word-break: break-word;
     min-width: 18rem;
-    max-width: 20rem;
+    max-width: 19.1rem;
     margin: 10px;
 }
 

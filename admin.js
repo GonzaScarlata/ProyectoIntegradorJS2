@@ -96,7 +96,8 @@ function displayProducts(products) {
                             <th scope="row">${index + 1}</th>
                             <td>${product.productName}</td>
                             <td>${product.productBrand}</td>
-                            <td>$${product.productPrice}</td>
+                            <td>${product.productPrice}</td>
+                            <td>${product.productPrice}</td>
                             <td>
                                 <div class="hiddenButtons">
                                     <div class="dropdown">

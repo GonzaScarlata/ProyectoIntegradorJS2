@@ -1,4 +1,9 @@
-const cardShowed = document.getElementById("cardShowed");
+const iPhone = document.getElementById("iPhone");
+const macBook = document.getElementById("MacBook");
+const iPad = document.getElementById("iPad");
+const watch = document.getElementById("Watch");
+const airPods = document.getElementById("AirPods");
+const otros = document.getElementById("Otros");
 const products = JSON.parse(localStorage.getItem("products")) || [];
 const cartModalContent = document.getElementById("cartModalContent");
 const price = document.getElementById("price");
@@ -46,14 +51,20 @@ const getModal = (product) => {
 function createProduct() {
   //Traer los productos de local storage
   const products = JSON.parse(localStorage.getItem("products")) || [];
-  const cardsProducts = [];
+  const cardIphone = [];
+  const cardMacbook = [];
+  const cardIpad = [];
+  const cardWatch = [];
+  const cardAirpods = [];
+  const cardOtros = [];
 
   for (let i = 0; i < products.length; i++) {
     const product = products[i];
+    const brand = product.productBrand;
     const card = `
-        <div class="card text-center mb-2 p-2 d-flex align-content-between flex-wrap" style="width: 18rem;">
+        <div class="card text-center mb-2 p-2 d-flex align-content-between flex-wrap justify-content-center" style="width: 18rem;">
             <div class="text-center">
-                <img src="${product.productImg}" class="card-img-top" style="width: 18rem; height: 190px;" alt="imágen del producto">
+                <img src="${product.productImg}" class="card-img-top m-auto" style="width: 18rem; height: 190px;" alt="imágen del producto">
             </div>
             <div class="card-body ">
                 <h5 class="card-title">${product.productName}</h5>
@@ -63,14 +74,39 @@ function createProduct() {
                 <div class="card-text text-center">
                     <button type="button" id="${product.id}" class="btn btn-primary" onclick="addProductToCart('${product.id}')">Agregar al carrito</button>
                     ${getModal(product)}
-
                 </div>
             </div>
         </div>
         `;
-    cardsProducts.unshift(card);
+  
+
+
+  if (brand === "iPhone") {
+    cardIphone.unshift(card);
+    iPhone.innerHTML = cardIphone.join("");
+
+  } if (brand === "MacBook") {
+    cardMacbook.unshift(card);
+    macBook.innerHTML = cardMacbook.join("");
+    
+  } if (brand === "iPad") {
+    cardIpad.unshift(card);
+    iPad.innerHTML = cardIpad.join("");
+
+  } if (brand === "Watch") {
+    cardWatch.unshift(card);
+    watch.innerHTML = cardWatch.join("");
+
+  } if (brand === "AirPods") {
+    cardAirpods.unshift(card);
+    airPods.innerHTML = cardAirpods.join("");
+
+  } if (brand === "Otros") {
+    cardOtros.unshift(card);
+    otros.innerHTML = cardOtros.join("");
   }
-  cardShowed.innerHTML = cardsProducts.join("");
+
+}
 }
 createProduct();
 
@@ -96,7 +132,7 @@ function totalPrice() {
     } else {
     for (i = 0; i < cartProducts.length; i ++) {
         const cartProduct = cartProducts[i];
-        counter = counter + parseInt(cartProduct.productPrice);
+        counter = counter + parseFloat(cartProduct.productPrice);
         total = `<th scope="row"><i class="fas fa-angle-double-right"></i></th>
         <td>El precio total de la compra es: $${counter}</td>
         `;
@@ -104,6 +140,7 @@ function totalPrice() {
     const totalPrice = [total];
     price.innerHTML = totalPrice.join('');
 }
+
 function deleteProduct(productId) {
     // Traer la lista de Productos de localStorage.
     const products = JSON.parse(localStorage.getItem('cartProducts')) || [];
@@ -117,6 +154,7 @@ function deleteProduct(productId) {
    showTheCart();
    totalPrice();
 }
+
 function showTheCart() {
     const cartProducts = JSON.parse(localStorage.getItem('cartProducts')) || [];
     const showedProducts = [];
@@ -147,4 +185,4 @@ showTheCart();
 /*
 <button type="button" class="btn btn-warning text-white" data-toggle="modal" data-target="#editModal" onclick="loadForm('${product.id}')"><i class="far fa-edit"></i></button>
 
- */
+*/
